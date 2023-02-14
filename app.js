@@ -13,7 +13,13 @@ const plane = 800;
 elForm.addEventListener("submit", function(evt) {
     evt.preventDefault();
 
-    let inputValue = input.value;
+    let inputValue = parseInt(input.value);
+
+    if (inputValue < 0) {
+        alert("Iltimos musbat qiymat kiriting😊");
+        return;
+    }
+
     let a = Math.floor(inputValue / human);
     let b = Math.floor((inputValue * 60 / human)) - (a * 60);
     let c = Math.floor((inputValue * 3600 / human)) - ((a * 3600) + (b * 60));
